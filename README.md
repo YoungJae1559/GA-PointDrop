@@ -1,6 +1,6 @@
 <div align="center">   
   
-# Source-Only-Cross-Weather-LiDAR-via-Geometry-Aware-Point-Drop
+# Source-Only Cross-Weather LiDAR via Geometry-Aware Point Drop
 </div>
 
 
