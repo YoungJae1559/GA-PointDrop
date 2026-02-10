@@ -20,7 +20,7 @@
 
 ## 🔥 News
 - [2026/02/01]: 🎉 Our paper has been accepted to the IEEE International Conference on Robotics and Automation (ICRA).
-</br>
+- **Code and pretrained models will be released soon.** (This repository will be updated.)
 
 ---
 
