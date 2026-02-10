@@ -52,5 +52,5 @@ during training with negligible inference cost. We adopt a source-only cross-wea
 
 ## Related Works
 We are deeply grateful for the following outstanding opensource work; without them, our work would not have been possible.
-- [LiDARweather](https://github.com/engineerJPark/LiDARWeather/tree/main)
+- [LiDARWeather](https://github.com/engineerJPark/LiDARWeather/tree/main)
 - [No thing, Nothing](https://github.com/engineerJPark/NTN)
