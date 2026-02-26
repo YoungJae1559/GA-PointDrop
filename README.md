@@ -88,6 +88,7 @@ Please refer to DATA_PREPARE.md for the details to prepare the 1SemanticKITTI, 2
 **Evaluation**
 ```bash
 python tools/test.py configs/lidarweather_minkunet/sj+lpd+minkunet_semanticstf_GMX.py sj+lpd+minkunet_semantickitti_GMX/best_miou_epoch_15.pth --task lidar_seg --show-dir /home/vip/harry/LiDARWeather/LiDARweather+GMX --show
+```
 
 ### SynLiDAR to SemanticSTF
 - [ ] Training & evaluation code for **SynLiDAR to SemanticSTF**
@@ -99,6 +100,7 @@ python tools/test.py configs/lidarweather_minkunet/sj+lpd+minkunet_semanticstf_G
 **Evaluation**
 ```bash
 python tools/test.py configs/lidarweather_minkunet/sj+lpd+minkunet_semanticstf_GMX.py sj+lpd+minkunet_synlidar_GMX/best_miou_epoch_15.pth --task lidar_seg --show-dir /home/vip/harry/LiDARWeather/LiDARweather+GMX --show
+```
 
 ---
 
