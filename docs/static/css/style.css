@@ -6,6 +6,9 @@
   --btn: #0b1220;
   --btnText: #ffffff;
   --link: #2563eb;
+
+  /* Figure display size (does NOT change the image file itself) */
+  --figureMax: 760px;
 }
 
 * { box-sizing: border-box; }
@@ -43,6 +46,15 @@ a:hover { text-decoration: underline; }
 .venue { font-weight: 600; color: var(--text); }
 .note { text-align: center; color: var(--muted); margin: 10px 0 22px; font-size: 13px; }
 
+/* figure note under figures (larger text) */
+.figureNote {
+  max-width: var(--figureMax);
+  margin: 12px auto 0;
+  color: var(--muted);
+  font-size: 15px !important;
+  line-height: 1.75 !important;
+}
+
 /* two-line button layout */
 .btnrows {
   display: flex;
@@ -79,14 +91,25 @@ a:hover { text-decoration: underline; }
 .btn:hover { filter: brightness(1.05); text-decoration: none; }
 
 .teaser { margin: 18px auto 0; text-align: center; }
-.teaser img { width: 100%; max-width: 920px; border: 1px solid var(--border); border-radius: 14px; }
-.teaser figcaption { color: var(--muted); font-size: 13px; margin-top: 10px; }
+.teaser img {
+  width: 100%;
+  max-width: var(--figureMax) !important;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  height: auto;
+}
+.teaser figcaption {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 10px;
+  font-weight: 700 !important;
+}
 
 .block { padding: 28px 0; border-top: 1px solid var(--border); }
 .block h2 { text-align: center; font-size: 28px; margin: 0 0 14px; }
 .abstract { color: #334155; line-height: 1.7; font-size: 16px; margin: 0 auto; max-width: 860px; }
 
-/* Video section: centered, wide, responsive (supports both iframe and local mp4 video) */
+/* Video section: keep wide (do not shrink) */
 .videoWrap {
   max-width: 920px;
   margin: 0 auto;
@@ -153,3 +176,43 @@ a:hover { text-decoration: underline; }
 .copy:hover { filter: brightness(0.98); }
 
 .footer { padding: 24px 0 40px; color: var(--muted); text-align: center; font-size: 13px; }
+
+/* Carousels: shrink overall figure area (overrides inline <style> in HTML) */
+.carousel {
+  max-width: var(--figureMax) !important;
+}
+
+.carouselSlide figcaption {
+  font-weight: 700;
+}
+
+.carouselSlide img {
+  width: 100%;
+  max-width: var(--figureMax) !important;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.carouselSlide .figureNote {
+  max-width: none;
+  margin: 10px 14px 16px;
+  text-align: left;
+}
+
+#methods .carouselTrack{
+  align-items: stretch;
+}
+
+#methods figure.carouselSlide{
+  display: grid;
+  grid-template-rows: 1fr auto auto; 
+}
+
+#methods figure.carouselSlide > img{
+  align-self: center;
+}
+
+.bgWhite { background: #ffffff; }
+.bgGray  { background: #f8fafc; }
+section.block:first-of-type { border-top: 0; }

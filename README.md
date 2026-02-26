@@ -24,6 +24,23 @@
 
 ---
 
+## Video
+
+<p align="center">
+  <video src="docs/static/videos/2026%20ICRA_Source-Only%20Cross-Weather%20LiDAR%20via%20Geometry-Aware%20Point%20Drop.mp4"
+         controls
+         playsinline
+         preload="metadata"
+         style="width: min(920px, 100%); border-radius: 14px; border: 1px solid #e2e8f0;">
+  </video>
+</p>
+
+<p align="center">
+  If the video does not play in GitHub preview, <a href="docs/static/videos/2026%20ICRA_Source-Only%20Cross-Weather%20LiDAR%20via%20Geometry-Aware%20Point%20Drop.mp4">click here to open/download</a>.
+</p>
+
+---
+
 ## Abstract
 LiDAR semantic segmentation degrades in adverse weather because refraction, scattering, and point dropouts corrupt geometry. Prior work, including weather simulation, mixing-based augmentation, domain randomization, and uncertainty or boundary regularization, improves robustness but still overlooks structural vulnerabilities near boundaries, corners, and sparse regions. We present a Light Geometry-aware adapter. The module aligns azimuth and applies horizontal circular padding to preserve neighbor continuity across the 0◦-360◦ wrap-around boundary. A local-window K-Nearest Neighbors gathers nearby
 points and computes simple local statistics, which are compressed into compact geometry-aware cues. During training, these cues drive region-aware regularization that stabilizes predictions in structurally fragile areas. The adapter is plug-and-play, complements augmentation, and can be enabled only

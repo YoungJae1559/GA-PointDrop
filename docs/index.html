@@ -14,6 +14,121 @@
 
   <link rel="icon" href="static/images/favicon.ico" />
   <link rel="stylesheet" href="static/css/style.css" />
+
+  <style>
+    .figureNote {
+      max-width: 920px;
+      margin: 10px auto 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .carousel {
+      position: relative;
+      max-width: 920px;
+      margin: 18px auto 0;
+    }
+
+    .carouselViewport {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .carouselTrack {
+      display: flex;
+      transition: transform 260ms ease;
+      will-change: transform;
+    }
+
+    .carouselSlide {
+      flex: 0 0 100%;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .carouselSlide img {
+      width: 100%;
+      display: block;
+    }
+
+    .carouselSlide figcaption {
+      padding: 12px 14px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .carouselHeading {
+      padding: 14px 14px 10px;
+      font-size: 18px;
+      font-weight: 800;
+      text-align: center;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .carouselSlide .figureNote {
+      max-width: none;
+      margin: 10px 14px 16px;
+      text-align: left;
+    }
+
+    .carouselBtn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.92);
+      cursor: pointer;
+      font-size: 24px;
+      line-height: 1;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 22px rgba(2,6,23,0.12);
+    }
+
+    .carouselBtn:hover { filter: brightness(0.98); }
+    .carouselBtn:disabled { opacity: 0.45; cursor: default; }
+
+    .carouselBtn.prev { left: -14px; }
+    .carouselBtn.next { right: -14px; }
+
+    @media (max-width: 720px) {
+      .carouselBtn.prev { left: 8px; }
+      .carouselBtn.next { right: 8px; }
+    }
+
+    .carouselDots {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 12px;
+    }
+
+    .carouselDot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .carouselDot.active {
+      background: var(--text);
+      border-color: var(--text);
+    }
+  </style>
 </head>
 
 <body>
@@ -38,7 +153,7 @@
     <div class="btnrows">
       <div class="btnrow">
         <a class="btn" href="static/files/2026%20ICRA%20paper.pdf" target="_blank" rel="noopener">📄 Paper</a>
-        <a class="btn" href="https://youngjae1559.github.io/Source-Only-Cross-Weather-LiDAR-via-Geometry-Aware-Point-Drop/" target="_blank" rel="noopener">💻 Source Code</a>
+        <a class="btn" href="https://github.com/YoungJae1559/Source-Only-Cross-Weather-LiDAR-via-Geometry-Aware-Point-Drop" target="_blank" rel="noopener">💻 Source Code</a>
         <a class="btn" href="https://arxiv.org/abs/2511.01250" target="_blank" rel="noopener">🧾 arXiv</a>
       </div>
 
@@ -50,129 +165,240 @@
     </div>
   </header>
 
-  <main class="container">
-    <section class="block" id="news">
-      <h2>🔥 News</h2>
-      <ul>
-        <li><strong>[2026/02/01]</strong>: 🎉 Our paper has been accepted to the IEEE International Conference on Robotics and Automation (ICRA).</li>
-        <li><strong>Code and pretrained models will be released soon.</strong> (This repository will be updated.)</li>
-      </ul>
+  <main>
+    <section class="block bgWhite" id="news">
+      <div class="container">
+        <h2>🔥 News</h2>
+        <ul>
+          <li><strong>[2026/02/01]</strong>: 🎉 Our paper has been accepted to the IEEE International Conference on Robotics and Automation (ICRA).</li>
+          <li><strong>Code and pretrained models will be released soon.</strong> (This repository will be updated.)</li>
+        </ul>
+      </div>
     </section>
 
-    <section class="block" id="video">
-      <h2>Video</h2>
+    <section class="block bgGray" id="video">
+      <div class="container">
+        <h2>Video</h2>
 
-      <div class="videoWrap">
-        <div class="videoFrame">
-          <video
-            class="videoPlayer"
-            controls
-            playsinline
-            preload="metadata"
-          >
-            <source src="static/videos/2026_ICRA.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <div class="videoWrap">
+          <div class="videoFrame">
+            <video class="videoPlayer" controls playsinline preload="metadata">
+              <source src="static/videos/2026_ICRA.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <p class="videoCaption">
+            Main video.
+            <a href="https://www.youtube.com/watch?v=NdJX_p-lQB4" target="_blank" rel="noopener">Open on YouTube</a>
+          </p>
         </div>
+      </div>
+    </section>
 
-        <p class="videoCaption">
-          Main video.
-          <a href="static/videos/2026_ICRA.mp4" target="_blank" rel="noopener">Download/Open</a>
-          ·
-          <a href="https://www.youtube.com/watch?v=NdJX_p-lQB4" target="_blank" rel="noopener">Open on YouTube</a>
+    <section class="block bgWhite" id="abstract">
+      <div class="container">
+        <h2>Abstract</h2>
+        <p class="abstract">
+          LiDAR semantic segmentation degrades in adverse weather because refraction, scattering, and point dropouts corrupt geometry.
+          Prior work, including weather simulation, mixing-based augmentation, domain randomization, and uncertainty or boundary
+          regularization, improves robustness but still overlooks structural vulnerabilities near boundaries, corners, and sparse regions.
+          We present a Light Geometry-aware adapter. The module aligns azimuth and applies horizontal circular padding to preserve neighbor
+          continuity across the 0◦-360◦ wrap-around boundary. A local-window K-Nearest Neighbors gathers nearby points and computes simple
+          local statistics, which are compressed into compact geometry-aware cues. During training, these cues drive region-aware
+          regularization that stabilizes predictions in structurally fragile areas. The adapter is plug-and-play, complements augmentation,
+          and can be enabled only during training with negligible inference cost. We adopt a source-only cross-weather setup where models
+          train on SemanticKITTI and are evaluated on SemanticSTF without target labels or fine-tuning. The adapter improves mIoU by +3.4%
+          over the data-centric augmentation baseline and by +0.3% over the class-centric regularization baseline. These results indicate
+          that geometry-driven regularization is a key direction for all-weather LiDAR segmentation.
         </p>
       </div>
     </section>
 
-    <section class="block" id="abstract">
-      <h2>Abstract</h2>
-      <p class="abstract">
-        LiDAR semantic segmentation degrades in adverse weather because refraction, scattering, and point dropouts corrupt geometry.
-        Prior work, including weather simulation, mixing-based augmentation, domain randomization, and uncertainty or boundary
-        regularization, improves robustness but still overlooks structural vulnerabilities near boundaries, corners, and sparse regions.
-        We present a Light Geometry-aware adapter. The module aligns azimuth and applies horizontal circular padding to preserve neighbor
-        continuity across the 0◦-360◦ wrap-around boundary. A local-window K-Nearest Neighbors gathers nearby points and computes simple
-        local statistics, which are compressed into compact geometry-aware cues. During training, these cues drive region-aware
-        regularization that stabilizes predictions in structurally fragile areas. The adapter is plug-and-play, complements augmentation,
-        and can be enabled only during training with negligible inference cost. We adopt a source-only cross-weather setup where models
-        train on SemanticKITTI and are evaluated on SemanticSTF without target labels or fine-tuning. The adapter improves mIoU by +3.4%
-        over the data-centric augmentation baseline and by +0.3% over the class-centric regularization baseline. These results indicate
-        that geometry-driven regularization is a key direction for all-weather LiDAR segmentation.
-      </p>
-    </section>
+    <section class="block bgGray" id="analysis-figures">
+      <div class="container">
+        <h2>Limitations &amp; Related Work</h2>
 
-    <section class="block" id="methods">
-      <h2>Methods</h2>
+        <div class="carousel" data-carousel>
+          <button class="carouselBtn prev" type="button" aria-label="Previous slide">‹</button>
 
-      <figure class="teaser">
-        <img src="static/images/Figure3.png" alt="Main architecture" />
-        <figcaption>
-          Main architecture.
-        </figcaption>
-      </figure>
-    </section>
+          <div class="carouselViewport">
+            <div class="carouselTrack">
+              <div class="carouselSlide">
+                <div class="carouselHeading">Limitations</div>
+                <figure class="teaser">
+                  <img src="static/images/Figure1.png" alt="Limitation comparison" />
+                  <figcaption>
+                    Limitations : Data-centric augmentation often erodes object boundaries and disrupts local geometric consistency, especially in sparse regions.
+                  </figcaption>
+                </figure>
 
-    <section class="block" id="getting-started">
-      <h2>Getting Started</h2>
-      <ul>
-        <li>
-          <label>
-            <input type="checkbox" disabled />
-            Training &amp; evaluation code for <strong>SemanticKITTI to SemanticSTF</strong>
-          </label>
-        </li>
-        <li>
-          <label>
-            <input type="checkbox" disabled />
-            Training &amp; evaluation code for <strong>SynLiDAR to SemanticSTF</strong>
-          </label>
-        </li>
-      </ul>
-    </section>
+                <p class="figureNote">
+                  In the highlighted regions, data-centric augmentation perturbs point locations and density in a class-agnostic way, which disproportionately harms boundary and corner points that already have few returns. As a result, nearest-neighbor relations become unreliable: points that should belong to the same object are separated, while points from different surfaces are artificially brought together, causing boundary leakage and inconsistent local topology. These geometry-driven errors lead to fragmented structures and label swaps in sparse zones, so we introduce geometry-aware regularization to maintain local consistency under corruption.
+                </p>
+              </div>
 
-    <section class="block" id="contact">
-      <h2>Contact</h2>
-      <ul>
-        <li><strong>YoungJae Cheong</strong>: <a href="mailto:bluebull777@gachon.ac.kr">bluebull777@gachon.ac.kr</a></li>
-        <li><strong>Jhonhyun An</strong>: <a href="mailto:jhonghyun@gachon.ac.kr">jhonghyun@gachon.ac.kr</a></li>
-      </ul>
-      <p>
-        If you have questions, please open an issue or contact us via email.
-      </p>
-    </section>
+              <div class="carouselSlide">
+                <div class="carouselHeading">Related Work</div>
+                <figure class="teaser">
+                  <img src="static/images/Figure2.png" alt="Related work overview" />
+                  <figcaption>
+                    Related work : (a) standard LiDAR semantic segmentation, (b) data-centric augmentation with selective jittering and learnable point drop, and (c) our geometry-aware point drop for geometry-driven regularization under source-only training.
+                  </figcaption>
+                </figure>
 
-    <section class="block" id="related-works">
-      <h2>Related Works</h2>
-      <p>
-        We are deeply grateful for the following outstanding opensource work; without them, our work would not have been possible.
-      </p>
-      <ul>
-        <li><a href="https://github.com/engineerJPark/LiDARWeather/tree/main" target="_blank" rel="noopener">LiDARWeather</a></li>
-        <li><a href="https://github.com/engineerJPark/NTN" target="_blank" rel="noopener">No thing, Nothing</a></li>
-      </ul>
-    </section>
+                <p class="figureNote">
+                  (a) Standard LiDAR segmentation pipelines focus on feature learning after preprocessing (voxelization, projection, sampling), assuming neighbor structure is reliable. (b) Data-centric augmentation extends this by simulating corruption through selective jittering and point dropping, but the supervision still comes only from the segmentation objective, so geometry-sensitive errors remain, especially where local neighborhoods are fragile. (c) We explicitly model local geometry and use it as a training-time signal to regularize predictions and control point drop, improving robustness under source-only cross-weather evaluation.
+                </p>
+              </div>
+            </div>
+          </div>
 
-    <section class="block" id="bibtex">
-      <h2>BibTeX</h2>
-      <div class="bibtex">
-        <pre id="bibtexText">@article{cheong2025source,
-  title={Source-Only Cross-Weather LiDAR via Geometry-Aware Point Drop},
-  author={Cheong, YoungJae and An, Jhonghyun},
-  journal={arXiv preprint arXiv:2511.01250},
-  year={2025}
-}</pre>
-        <button class="copy" id="copyBib">Copy</button>
+          <button class="carouselBtn next" type="button" aria-label="Next slide">›</button>
+
+          <div class="carouselDots" aria-label="Slide navigation"></div>
+        </div>
       </div>
     </section>
 
-    <footer class="footer">
-      <p>
-        Project page for ICRA 2026.
-      </p>
+    <section class="block bgWhite" id="methods">
+      <div class="container">
+        <h2>Methods</h2>
+
+        <div class="carousel" data-carousel>
+          <button class="carouselBtn prev" type="button" aria-label="Previous figure">‹</button>
+
+          <div class="carouselViewport">
+            <div class="carouselTrack">
+              <figure class="carouselSlide">
+                <img src="static/images/Figure3.png" alt="Our framework" />
+                <figcaption>
+                  Overall architecture: Overall framework with the Light Geometry-aware adapter and region-level point drop.
+                </figcaption>
+                <p class="figureNote">
+                  We inject selective jittering to mimic adverse-weather corruption, then use the Light Geometry-aware adapter to extract compact local geometry cues (via azimuth alignment, circular padding, and local-window KNN) from intermediate features. These cues guide a region-level point-drop policy that suppresses structurally fragile regions (boundaries, corners, sparse returns) during training, while the segmentation network is optimized in the forward pass and the drop policy is updated in the second step.
+                </p>
+              </figure>
+
+              <figure class="carouselSlide">
+                <img src="static/images/Figure4.png" alt="Circular padding and local window KNN" />
+                <figcaption>
+                  Light Geometry-aware adapter: Local-window KNN with circular padding to preserve neighbor continuity across the 0 to 360 wrap-around.
+                </figcaption>
+                <p class="figureNote">
+                  Global KNN can connect points that are far apart on the range-image grid, and it becomes especially unreliable near the azimuth seam (0 to 360), where true neighbors are split across the boundary. We restrict neighbor search to a local window and apply circular padding so that columns near 0 and 360 share a continuous neighborhood, producing stable local statistics and preventing seam-induced artifacts in geometry cues.
+                </p>
+              </figure>
+            </div>
+          </div>
+
+          <button class="carouselBtn next" type="button" aria-label="Next figure">›</button>
+
+          <div class="carouselDots" aria-label="Figure navigation"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block bgGray" id="experiments">
+      <div class="container">
+        <h2>Experiments</h2>
+
+        <div class="carousel" data-carousel>
+          <button class="carouselBtn prev" type="button" aria-label="Previous slide">‹</button>
+
+          <div class="carouselViewport">
+            <div class="carouselTrack">
+              <figure class="carouselSlide">
+                <div class="carouselHeading">Qualitative Results</div>
+                <img src="static/images/Figure5.png" alt="Qualitative results across weather" />
+                <figcaption>
+                  Qualitative results across adverse weather (light fog, dense fog, rain, snow): comparison of ground-truth, data-centric augmentation baseline, and our method with two adapter settings (W=512, K=8) and (W=256, K=16).
+                </figcaption>
+                <p class="figureNote">
+                  Across all weather conditions, the data-centric augmentation baseline often produces boundary smearing and local class confusion in the highlighted regions, especially on thin structures and sparse returns. In contrast, our geometry-aware regularization better preserves object silhouettes and neighborhood consistency, reducing boundary leakage and class flips under fog, rain, and snow corruptions. The two configurations (W=512, K=8) and (W=256, K=16) show consistent improvements, indicating that geometry-driven cues remain effective across different hyperparameter choices.
+                </p>
+              </figure>
+            </div>
+          </div>
+
+          <button class="carouselBtn next" type="button" aria-label="Next slide">›</button>
+
+          <div class="carouselDots" aria-label="Slide navigation"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block bgWhite" id="getting-started">
+      <div class="container">
+        <h2>Getting Started</h2>
+        <ul>
+          <li>
+            <label>
+              <input type="checkbox" disabled />
+              Training &amp; evaluation code for <strong>SemanticKITTI to SemanticSTF</strong>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" disabled />
+              Training &amp; evaluation code for <strong>SynLiDAR to SemanticSTF</strong>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block bgGray" id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <ul>
+          <li><strong>YoungJae Cheong</strong>: <a href="mailto:bluebull777@gachon.ac.kr">bluebull777@gachon.ac.kr</a></li>
+          <li><strong>Jhonhyun An</strong>: <a href="mailto:jhonghyun@gachon.ac.kr">jhonghyun@gachon.ac.kr</a></li>
+        </ul>
+        <p>
+          If you have questions, please open an issue or contact us via email.
+        </p>
+      </div>
+    </section>
+
+    <section class="block bgWhite" id="related-works">
+      <div class="container">
+        <h2>Related Works</h2>
+        <p>
+          We are deeply grateful for the following outstanding opensource work; without them, our work would not have been possible.
+        </p>
+        <ul>
+          <li><a href="https://github.com/engineerJPark/LiDARWeather/tree/main" target="_blank" rel="noopener">LiDARWeather</a></li>
+          <li><a href="https://github.com/engineerJPark/NTN" target="_blank" rel="noopener">No thing, Nothing</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block bgGray" id="bibtex">
+      <div class="container">
+        <h2>BibTeX</h2>
+        <div class="bibtex">
+          <pre id="bibtexText">@article{cheong2025source,
+    title={Source-Only Cross-Weather LiDAR via Geometry-Aware Point Drop},
+    author={Cheong, YoungJae and An, Jhonghyun},
+    journal={arXiv preprint arXiv:2511.01250},
+    year={2025}
+  }</pre>
+          <button class="copy" id="copyBib">Copy</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer bgWhite">
+      <div class="container">
+        <p>
+          Project page for ICRA 2026.
+        </p>
+      </div>
     </footer>
   </main>
 
-  <script>
+<script>
     const btn = document.getElementById("copyBib");
     const pre = document.getElementById("bibtexText");
     btn.addEventListener("click", async () => {
@@ -185,6 +411,51 @@
         setTimeout(() => btn.textContent = "Copy", 1200);
       }
     });
+
+    function initCarousel(root) {
+      const track = root.querySelector(".carouselTrack");
+      const slides = Array.from(root.querySelectorAll(".carouselSlide"));
+      const prev = root.querySelector(".carouselBtn.prev");
+      const next = root.querySelector(".carouselBtn.next");
+      const dotsWrap = root.querySelector(".carouselDots");
+
+      let idx = 0;
+
+      const dots = slides.map((_, i) => {
+        const d = document.createElement("button");
+        d.type = "button";
+        d.className = "carouselDot";
+        d.setAttribute("aria-label", `Go to slide ${i + 1}`);
+        d.addEventListener("click", () => go(i));
+        dotsWrap.appendChild(d);
+        return d;
+      });
+
+      function render() {
+        track.style.transform = `translateX(${-idx * 100}%)`;
+        dots.forEach((d, i) => d.classList.toggle("active", i === idx));
+        prev.disabled = idx === 0;
+        next.disabled = idx === slides.length - 1;
+      }
+
+      function go(i) {
+        idx = Math.max(0, Math.min(slides.length - 1, i));
+        render();
+      }
+
+      prev.addEventListener("click", () => go(idx - 1));
+      next.addEventListener("click", () => go(idx + 1));
+
+      root.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") go(idx - 1);
+        if (e.key === "ArrowRight") go(idx + 1);
+      });
+
+      root.tabIndex = 0;
+      render();
+    }
+
+    document.querySelectorAll("[data-carousel]").forEach(initCarousel);
   </script>
 </body>
 </html>
