@@ -24,20 +24,6 @@
 
 ---
 
-## Video
-
-<p align="center">
-  <a href="docs/static/videos/2026_ICRA.mp4">
-    <img src="docs/static/images/Figure3.png" width="920" alt="Main video (click to open)" />
-  </a>
-</p>
-
-<p align="center">
-  ▶ Click the image to open/download the video (MP4).
-</p>
-
----
-
 ## Abstract
 LiDAR semantic segmentation degrades in adverse weather because refraction, scattering, and point dropouts corrupt geometry. Prior work, including weather simulation, mixing-based augmentation, domain randomization, and uncertainty or boundary regularization, improves robustness but still overlooks structural vulnerabilities near boundaries, corners, and sparse regions. We present a Light Geometry-aware adapter. The module aligns azimuth and applies horizontal circular padding to preserve neighbor continuity across the 0◦-360◦ wrap-around boundary. A local-window K-Nearest Neighbors gathers nearby
 points and computes simple local statistics, which are compressed into compact geometry-aware cues. During training, these cues drive region-aware regularization that stabilizes predictions in structurally fragile areas. The adapter is plug-and-play, complements augmentation, and can be enabled only
