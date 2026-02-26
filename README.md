@@ -1,4 +1,4 @@
-<h2 align="center">Source-Only Cross-Weather LiDAR via Geometry-Aware Point Drop</h2>
+<h2 align="center">GA-PointDrop</h2>
 
 <p align="center">
   <strong>YoungJae Cheong</strong> ·
@@ -11,7 +11,7 @@
   <a href="https://arxiv.org/pdf/2511.01250">
     <strong><code>📄 Paper</code></strong>
   </a>
-  <a href="https://github.com/VIPLabGachon/Source-Only-Cross-Weather-LiDAR-via-Geometry-Aware-Point-Drop">
+  <a href="https://github.com/YoungJae1559/GA-PointDrop">
     <strong><code>💻 Source Code</code></strong>
   </a>
 </p>
@@ -21,23 +21,6 @@
 ## 🔥 News
 - [2026/02/01]: 🎉 Our paper has been accepted to the IEEE International Conference on Robotics and Automation (ICRA).
 - **Code and pretrained models will be released soon.** (This repository will be updated.)
-
----
-
-## Video
-
-<p align="center">
-  <video src="docs/static/videos/2026%20ICRA_Source-Only%20Cross-Weather%20LiDAR%20via%20Geometry-Aware%20Point%20Drop.mp4"
-         controls
-         playsinline
-         preload="metadata"
-         style="width: min(920px, 100%); border-radius: 14px; border: 1px solid #e2e8f0;">
-  </video>
-</p>
-
-<p align="center">
-  If the video does not play in GitHub preview, <a href="docs/static/videos/2026%20ICRA_Source-Only%20Cross-Weather%20LiDAR%20via%20Geometry-Aware%20Point%20Drop.mp4">click here to open/download</a>.
-</p>
 
 ---
 
@@ -59,8 +42,8 @@ conda create -n lidar_weather python=3.8 -y && conda activate lidar_weather
 conda install pytorch==1.10.0 torchvision==0.11.0 cudatoolkit=11.3 -c pytorch -y
 pip install -U openmim && mim install mmengine && mim install 'mmcv>=2.0.0rc4, <2.1.0' && mim install 'mmdet>=3.0.0, <3.2.0'
 
-git clone https://github.com/YoungJae1559/Source-Only-Cross-Weather-LiDAR-via-Geometry-Aware-Point-Drop.git
-cd Source-Only-Cross-Weather-LiDAR-via-Geometry-Aware-Point-Drop && pip install -v -e .
+git clone https://github.com/YoungJae1559/GA-PointDrop.git
+cd GA-PointDrop && pip install -v -e .
 
 pip install cumm-cu113 && pip install spconv-cu113
 sudo apt-get install libsparsehash-dev
