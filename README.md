@@ -53,9 +53,50 @@ during training with negligible inference cost. We adopt a source-only cross-wea
 
 ---
 
+## Installation
+conda create -n lidar_weather python=3.8 -y && conda activate lidar_weather
+conda install pytorch==1.10.0 torchvision==0.11.0 cudatoolkit=11.3 -c pytorch -y
+pip install -U openmim && mim install mmengine && mim install 'mmcv>=2.0.0rc4, <2.1.0' && mim install 'mmdet>=3.0.0, <3.2.0'
+
+git clone https://github.com/YoungJae1559/Source-Only-Cross-Weather-LiDAR-via-Geometry-Aware-Point-Drop.git
+cd Source-Only-Cross-Weather-LiDAR-via-Geometry-Aware-Point-Drop && pip install -v -e .
+
+pip install cumm-cu113 && pip install spconv-cu113
+sudo apt-get install libsparsehash-dev
+export PATH=/usr/local/cuda/bin:$PATH && pip install --upgrade git+https://github.com/mit-han-lab/torchsparse.git@v1.4.0
+pip install nuscenes-devkit
+pip install wandb
+
+---
+
+## Data Preparation
+Please refer to DATA_PREPARE.md for the details to prepare the 1SemanticKITTI, 2SynLiDAR, 3SemanticSTF, and 4SemanticKITTI-C datasets.
+
+---
+
 ## Getting Started
+
+### SemanticKITTI to SemanticSTF
 - [ ] Training & evaluation code for **SemanticKITTI to SemanticSTF**
+
+**Training**
+```bash
+./tools/dist_train.sh configs/lidarweather_minkunet/sj+lpd+minkunet_semantickitti_GMX.py 2
+
+**Evaluation**
+```bash
+python tools/test.py configs/lidarweather_minkunet/sj+lpd+minkunet_semanticstf_GMX.py sj+lpd+minkunet_semantickitti_GMX/best_miou_epoch_15.pth --task lidar_seg --show-dir /home/vip/harry/LiDARWeather/LiDARweather+GMX --show
+
+### SynLiDAR to SemanticSTF
 - [ ] Training & evaluation code for **SynLiDAR to SemanticSTF**
+
+**Training**
+```bash
+./tools/dist_train.sh configs/lidarweather_minkunet/sj+lpd+minkunet_semantickitti_GMX.py 2
+
+**Evaluation**
+```bash
+python tools/test.py configs/lidarweather_minkunet/sj+lpd+minkunet_semanticstf_GMX.py sj+lpd+minkunet_synlidar_GMX/best_miou_epoch_15.pth --task lidar_seg --show-dir /home/vip/harry/LiDARWeather/LiDARweather+GMX --show
 
 ---
 
