@@ -89,7 +89,7 @@ python tools/test.py configs/lidarweather_minkunet/sj+lpd+minkunet_semanticstf_G
 
 ---
 
-## Contact
+## Contact Mail
 - **YoungJae Cheong** — `bluebull777@gachon.ac.kr`
 - **Jhonhyun An** — `jhonghyun@gachon.ac.kr`  
 
